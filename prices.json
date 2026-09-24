@@ -1,0 +1,61 @@
+{
+  "updated": "2026-09-24",
+  "currency": "USD",
+  "unit": "per 1M tokens",
+  "models": [
+    {
+      "id": "deepseek-v4-flash",
+      "provider": "DeepSeek (direct)",
+      "input": 0.14,
+      "output": 0.28,
+      "context_k": 128,
+      "free_tier": false,
+      "note": "Самый дёшевый рабочий вариант; оплата картой US проверялась 2026-09-24"
+    },
+    {
+      "id": "llama-3.3-70b-versatile",
+      "provider": "Groq",
+      "input": 0.05,
+      "output": 0.08,
+      "context_k": 128,
+      "free_tier": true,
+      "note": "Есть бесплатный ключ без карты (console.groq.com/keys); лимиты по RPM"
+    },
+    {
+      "id": "gemini-flash-lite",
+      "provider": "Google AI Studio",
+      "input": 0.30,
+      "output": 2.50,
+      "context_k": 1000,
+      "free_tier": true,
+      "note": "Бесплатный тир в AI Studio; платный через GCP"
+    },
+    {
+      "id": "kimi-k3",
+      "provider": "Moonshot AI (direct)",
+      "input": 3.00,
+      "output": 15.00,
+      "context_k": 1000,
+      "free_tier": false,
+      "note": "Пополнение от $5, ваучер $5 при $5, Tier 1 от $10"
+    },
+    {
+      "id": "moonshotai/kimi-k3",
+      "provider": "OpenRouter",
+      "input": 3.30,
+      "output": 16.50,
+      "context_k": 1000,
+      "free_tier": false,
+      "note": "Тот же K3 через агрегатор, прием US-карты подтверждён"
+    },
+    {
+      "id": "moonshotai/kimi-k3:free",
+      "provider": "OpenRouter",
+      "input": 0.00,
+      "output": 0.00,
+      "context_k": 1000,
+      "free_tier": true,
+      "note": "~50 запросов/день при нулевом балансе OpenRouter"
+    }
+  ]
+}
