@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-price-compare"
+version = "1.1.0"
+description = "Сравнение цен LLM API между провайдерами из одного JSON-снимка"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Andrey P.", email = "andrey8802@mail.ru" }]
+keywords = ["llm", "pricing", "cli", "openai", "cost", "tokens"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.scripts]
+llm-price-compare = "llm_price_compare:main"
+
+[tool.setuptools]
+py-modules = ["llm_price_compare"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
