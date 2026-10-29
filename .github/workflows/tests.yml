@@ -2,18 +2,23 @@ name: tests
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.9", "3.12"]
+        python-version: ["3.9", "3.11", "3.13"]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Run unit tests
-        run: python -m unittest test_llm_price_compare.py -v
+      - name: Run tests
+        run: python -m unittest discover -s . -p "test_*.py" -v
+      - name: Validate price snapshot
+        run: python llm_price_compare.py validate --max-age-days 365
